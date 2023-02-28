@@ -1,6 +1,7 @@
 package byteBank;
 
-public class Cliente {
+// No puede extender de una interfaz ntonces usamos implements para implementar la interfaz
+public class Cliente implements Autenticable {
 	
 	// Creamos una nueva clase para referenciar el objeto titular
     private String nombre;
@@ -34,5 +35,17 @@ public class Cliente {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
+
+	@Override
+	public boolean iniciarSesion(String clave) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void setClave(String clave) {
+		// TODO Auto-generated method stub
+		
+	}
 
 }
