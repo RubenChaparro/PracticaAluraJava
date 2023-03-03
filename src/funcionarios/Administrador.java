@@ -1,4 +1,4 @@
-package byteBank;
+package funcionarios;
 
 // No puede extender de una interfaz ntonces usamos implements para implementar la interfaz
 // Podemos heredar los metodos de funcionario y luego implementar a autenticable
@@ -8,23 +8,25 @@ public class Administrador extends Funcionario implements Autenticable {
 	// No podemos tener herencia multiple en Java 
 	// public class Administrador extends Funcionario, FuncionarioAutenticable {
 	
+private AutenticacionUtil util;
+   
+    
+    public Administrador() {
+		this.util = new AutenticacionUtil();
+	}
 	@Override
 	public double getBonificacion() {
-		return 200;
-	}
-
-	@Override
-	public boolean iniciarSesion(String clave) {
-		// TODO Auto-generated method stub
-		return false;
+		return this.getSalario();
 	}
 
 	@Override
 	public void setClave(String clave) {
-		// TODO Auto-generated method stub
+		this.util.setClave(clave);
 		
 	}
-	
-	
 
+	@Override
+	public boolean iniciarSesion(String clave) {
+		return this.util.iniciarSesion(clave);
+	}
 }

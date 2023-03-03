@@ -1,4 +1,4 @@
-package byteBank;
+package funcionarios;
 
 //Con la palabra reservada abstract le decimos a Java que la clase es una reporesentacion y no una clase fisica
 public abstract class Funcionario {

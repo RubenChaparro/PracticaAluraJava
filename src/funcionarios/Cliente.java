@@ -1,4 +1,4 @@
-package byteBank;
+package funcionarios;
 
 // No puede extender de una interfaz ntonces usamos implements para implementar la interfaz
 public class Cliente implements Autenticable {
@@ -7,8 +7,14 @@ public class Cliente implements Autenticable {
     private String nombre;
     private String documento;
     private String telefono;
+    private AutenticacionUtil util;
+   
     
-    // En el menu de source en generate getter and setter y el IDE nos genera
+    public Cliente() {
+		this.util = new AutenticacionUtil();
+	}
+
+	// En el menu de source en generate getter and setter y el IDE nos genera
  	// automaticamente los que seleccionemos
  	
     public String getNombre() {
@@ -37,15 +43,14 @@ public class Cliente implements Autenticable {
     }
 
 	@Override
-	public boolean iniciarSesion(String clave) {
-		// TODO Auto-generated method stub
-		return false;
+	public void setClave(String clave) {
+		this.util.setClave(clave);
+		
 	}
 
 	@Override
-	public void setClave(String clave) {
-		// TODO Auto-generated method stub
-		
+	public boolean iniciarSesion(String clave) {
+		return this.util.iniciarSesion(clave);
 	}
 
 }

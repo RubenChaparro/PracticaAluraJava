@@ -1,7 +1,7 @@
-package byteBank;
+package Cuenta;
 
 //Cuando creamos la clase podemos colocarle un extends por defecto en la opcion del menu superclass, luego en browse y buscamos la clase padre
-public class CuentaCorriente extends Cuenta {
+public class CuentaCorriente extends Cuenta implements Tributacion {
 	
 	// Al extender de la clase padre si o si tenemos que pasar los mismos parametros
 	// Entonces creamos el constructor con las reglas del de la clase padre
@@ -25,8 +25,13 @@ public class CuentaCorriente extends Cuenta {
 	// hijas
 	@Override
 	public void deposita(double valor) {
-		// TODO Auto-generated method stub
+		this.saldo = this.saldo + valor;
 		
+	}
+
+	//@Override
+	public double getValorImpuesto() {
+		return super.saldo * 0.01;
 	}
 	
 }

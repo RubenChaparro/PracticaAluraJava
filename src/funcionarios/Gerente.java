@@ -1,8 +1,15 @@
-package byteBank;
+package funcionarios;
 
 //Con la palabra extends (hereda de) le decimos que gerente hereda las caracteristicas de la clase padre funcionario 
 public class Gerente extends Funcionario implements Autenticable {
 
+private AutenticacionUtil util;
+   
+    
+    public Gerente() {
+		this.util = new AutenticacionUtil();
+	}
+    
     // Sobre escritura de metodo
     public double getBonificacion() {
         System.out.println("Llamando metodo del Gerente");
@@ -12,13 +19,13 @@ public class Gerente extends Funcionario implements Autenticable {
     // privada
 
 	@Override
-	public boolean iniciarSesion(String clave) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-	@Override
 	public void setClave(String clave) {
-		// TODO Auto-generated method stub
+		this.util.setClave(clave);
 		
+	}
+
+	@Override
+	public boolean iniciarSesion(String clave) {
+		return this.util.iniciarSesion(clave);
 	}
 }

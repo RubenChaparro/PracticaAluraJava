@@ -1,4 +1,4 @@
-package byteBank;
+package funcionarios;
 
 public class TestDeSistemaInterno {
 

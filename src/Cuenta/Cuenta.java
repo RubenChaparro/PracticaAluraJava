@@ -1,4 +1,6 @@
-package byteBank;
+package Cuenta;
+
+import funcionarios.Cliente;
 
 public abstract class Cuenta {
 
