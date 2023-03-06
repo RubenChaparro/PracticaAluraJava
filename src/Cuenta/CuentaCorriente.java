@@ -16,9 +16,10 @@ public class CuentaCorriente extends Cuenta implements Tributacion {
 	// el metodo debe tener el mismo nombre de la clase padre igual que sus
 	// argumentos	
 	@Override
-	public boolean saca(double valor) {
+	// Aca tratamos la excepcion con un throws
+	public void saca(double valor) throws SaldoInsuficienteException {
 		double comision = 0.2;
-		return super.saca(valor + comision);
+		super.saca(valor + comision);
 	}
 	
 	// todos los metodos abstractos de la clase padre deben ir tambien en las class
